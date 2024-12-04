@@ -1,0 +1,50 @@
+<meta name='viewport' content='width=device-width, initial-scale=1'/><!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Age Calculator</title>
+  <link rel="stylesheet" href="age.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Age Calculator</h1>
+    <label for="dob">Enter Your Date of Birth:</label>
+    <input type="date" id="dob">
+    <button id="calculate-btn">Calculate Age</button>
+    <div id="result"></div>
+  </div>
+  <script src="age.css"></script>
+</body>
+</html>
+
+
+
+<script>document.getElementById("calculate-btn").addEventListener("click", function () {
+  const dob = document.getElementById("dob").value;
+
+  if (!dob) {
+    document.getElementById("result").innerText = "Please select a valid date!";
+    return;
+  }
+
+  const dobDate = new Date(dob);
+  const today = new Date();
+
+  let ageYears = today.getFullYear() - dobDate.getFullYear();
+  let ageMonths = today.getMonth() - dobDate.getMonth();
+  let ageDays = today.getDate() - dobDate.getDate();
+
+  if (ageDays < 0) {
+    ageMonths -= 1;
+    ageDays += new Date(today.getFullYear(), today.getMonth(), 0).getDate();
+  }
+
+  if (ageMonths < 0) {
+    ageYears -= 1;
+    ageMonths += 12;
+  }
+
+  document.getElementById("result").innerText = 
+    `You are ${ageYears} years, ${ageMonths} months, and ${ageDays} days old.`;
+});</script>
