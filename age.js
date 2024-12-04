@@ -9,6 +9,12 @@ document.getElementById("calculate-btn").addEventListener("click", function () {
   const dobDate = new Date(dob);
   const today = new Date();
 
+  // Check if the entered date is in the future
+  if (dobDate > today) {
+    document.getElementById("result").innerText = "The date cannot be in the future!";
+    return;
+  }
+
   let ageYears = today.getFullYear() - dobDate.getFullYear();
   let ageMonths = today.getMonth() - dobDate.getMonth();
   let ageDays = today.getDate() - dobDate.getDate();
