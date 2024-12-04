@@ -1,51 +1,56 @@
+/* General Body Styling */
 body {
   font-family: Arial, sans-serif;
   background-image: url('age.webp');
   background-repeat: no-repeat;
-  background-size: cover; /* Ensure the background covers the entire viewport */
+  background-size: cover; /* Ensures background covers the full viewport */
   background-position: center;
   margin: 0;
   padding: 0;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100%;
   min-height: 100vh;
 }
 
+/* Container Styling */
 .container {
   background: rgb(0, 28, 72);
-  padding: 30px 20px; /* Adjusted padding for smaller screens */
+  padding: 30px 20px; /* Balanced padding for all viewports */
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
   text-align: center;
-  width: 90%; /* Use percentage for responsive sizing */
-  max-width: 400px; /* Limit maximum width */
-  margin: 10px; /* Add margin for better spacing */
+  width: 100%; /* Dynamic width */
+  max-width: 400px; /* Restrict max width */
+  margin: 20px; /* Add margin to avoid edge overlap */
 }
 
+/* Heading Styling */
 h1 {
   margin-bottom: 20px;
   color: #ffffff;
-  font-size: 24px; /* Adjusted font size for better scaling */
+  font-size: 1.8rem; /* Use relative units for responsiveness */
 }
 
+/* Label Styling */
 label {
   display: block;
   color: whitesmoke;
   margin-bottom: 10px;
-  font-size: 16px;
+  font-size: 1rem;
 }
 
+/* Input Field Styling */
 #dob {
   width: 100%;
   padding: 10px;
   margin-bottom: 15px;
   border: 1px solid #ccc;
   border-radius: 4px;
-  font-size: 14px; /* Adjust font size for input field */
+  font-size: 1rem;
 }
 
+/* Button Styling */
 button {
   padding: 10px 15px;
   background-color: #007bff;
@@ -53,40 +58,53 @@ button {
   border: none;
   border-radius: 4px;
   cursor: pointer;
-  font-size: 16px; /* Button font size */
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
 }
 
 button:hover {
   background-color: #0056b3;
 }
 
+/* Result Styling */
 #result {
   margin-top: 20px;
-  font-size: 18px;
+  font-size: 1rem;
   color: #0ef;
 }
 
-/* Mobile adjustments */
+/* Mobile Styling */
 @media screen and (max-width: 768px) {
+  body {
+    justify-content: flex-start; /* Align content higher on smaller screens */
+    align-items: flex-start;
+    padding: 10px; /* Add padding around the body */
+  }
+
   .container {
-    padding: 20px 15px; /* Reduce padding for smaller screens */
-    width: 90%; /* Take full width with some margin */
+    width: 90%; /* Occupy most of the screen */
+    padding: 20px 15px; /* Adjust padding for smaller devices */
   }
 
   h1 {
-    font-size: 20px; /* Slightly smaller for mobile */
+    font-size: 1.5rem; /* Adjust heading size */
   }
 
   label {
-    font-size: 14px;
+    font-size: 0.9rem; /* Slightly smaller labels */
+  }
+
+  #dob {
+    font-size: 0.9rem;
+    padding: 8px;
   }
 
   button {
-    font-size: 14px;
-    padding: 8px 12px; /* Adjust button size */
+    font-size: 0.9rem;
+    padding: 8px 12px;
   }
 
   #result {
-    font-size: 16px;
+    font-size: 0.9rem;
   }
 }
